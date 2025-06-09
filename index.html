@@ -79,9 +79,16 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .footer-button:hover {
             background-color: rgba(255, 255, 255, 0.4);
+        }
+        .footer-button img {
+            width: 16px;
+            height: 16px;
         }
         @media (max-width: 768px) {
             .logo { width: 80px; }
@@ -89,12 +96,19 @@
             .search-container { width: 90%; }
             .search-box { padding: 12px 15px; font-size: 14px; }
             .engine-button { padding: 10px 15px; font-size: 14px; }
-            .footer-button { padding: 6px 12px; font-size: 12px; }
+            .footer-button { 
+                padding: 6px 12px; 
+                font-size: 12px; 
+            }
+            .footer-button img {
+                width: 14px;
+                height: 14px;
+            }
         }
     </style>
 </head>
 <body>
-    <img class="logo" src="images/logo.gif" alt="Logo">
+    <img class="logo" src="images/logo.png" alt="Logo">
     <div class="time-display" id="timeDisplay"></div>
     <div class="search-container">
         <form class="search-form" id="searchForm" action="https://www.baidu.com/s" method="GET">
@@ -107,7 +121,9 @@
             <input type="text" name="wd" class="search-box" placeholder="搜索">
         </form>
     </div>
-    <a href="https://icp.gov.moe/?keyword=20253666" target="_blank" class="footer-button">萌ICP备20253666号</a>
+    <a href="https://icp.gov.moe/?keyword=20253666" target="_blank" class="footer-button">
+        <img src="images/moe.png" alt="MOE">萌ICP备20253666号
+    </a>
     <!--
     <a href="https://icp.gov.moe/?keyword=20253666" target="_blank">萌ICP备20253666号</a>
     --!>
