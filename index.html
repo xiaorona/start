@@ -36,7 +36,7 @@
         .search-box:focus { color: #000 !important; }
         .search-box.has-text { padding-left: 80px; }
         .search-box::placeholder { color: rgba(0, 0, 0, 0.7); }
-        .engine-button { position: absolute; padding: 12px 20px; border: none; border-radius: 25px; background-color: #ffffff; color: white; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease; margin: 5px; left: 5px; }
+        .engine-button { position: absolute; padding: 12px 20px; border: none; border-radius: 25px; background-color: #80CAFF; color: white; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease; margin: 5px; left: 5px; }
         .engine-button:hover { background-color: #005bb5; }
         .engine-dropdown { 
             position: absolute; 
@@ -64,14 +64,24 @@
             cursor: pointer; 
         }
         .engine-dropdown button:hover { background-color: rgba(255, 255, 255, 0.1); }
-        .footer-link {
+        .footer-button {
             position: fixed;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 20px;
             color: white;
-            text-decoration: none;
             font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .footer-button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
         }
         @media (max-width: 768px) {
             .logo { width: 80px; }
@@ -79,7 +89,7 @@
             .search-container { width: 90%; }
             .search-box { padding: 12px 15px; font-size: 14px; }
             .engine-button { padding: 10px 15px; font-size: 14px; }
-            .footer-link { font-size: 12px; }
+            .footer-button { padding: 6px 12px; font-size: 12px; }
         }
     </style>
 </head>
@@ -97,8 +107,10 @@
             <input type="text" name="wd" class="search-box" placeholder="搜索">
         </form>
     </div>
+    <a href="https://icp.gov.moe/?keyword=20253666" target="_blank" class="footer-button">萌ICP备20253666号</a>
+    <!--
     <a href="https://icp.gov.moe/?keyword=20253666" target="_blank">萌ICP备20253666号</a>
-
+    --!>
     <script>
         function updateTime() {
             const now = new Date();
