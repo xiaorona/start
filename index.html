@@ -13,7 +13,7 @@
             --search-bg: rgba(255, 255, 255, 0.2);
             --dropdown-bg: #ffffff;
         }
-        
+
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg-color: #121212;
@@ -22,7 +22,7 @@
                 --dropdown-bg: #2d2d2d;
             }
         }
-        
+
         body { 
             margin: 0; 
             padding: 0;
@@ -30,11 +30,11 @@
             flex-direction: column; 
             align-items: center; 
             min-height: 100vh; 
-            background: var(--bg-color) url('https://t.alcy.cc/moez') no-repeat center center fixed; 
+            background: var(--bg-color) url('https://rpic.origz.com/api.php?category=pixiv') no-repeat center center fixed; 
             background-size: cover;
             color: var(--text-color);
         }
-        
+
         .search-container { 
             width: 61.8%; 
             max-width: 600px; 
@@ -44,7 +44,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        
+
         .search-form { 
             display: flex; 
             align-items: center; 
@@ -55,7 +55,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
             position: relative;
         }
-        
+
         .search-box { 
             width: 100%; 
             padding: 15px 50px; 
@@ -68,7 +68,7 @@
             text-align: center;
             caret-color: var(--text-color);
         }
-        
+
         .engine-selector {
             position: absolute;
             left: 15px;
@@ -80,7 +80,7 @@
             cursor: pointer;
             z-index: 1;
         }
-        
+
         .engine-dropdown { 
             position: absolute; 
             left: 0; 
@@ -94,7 +94,7 @@
             display: none; 
             z-index: 1000; 
         }
-        
+
         .engine-dropdown button { 
             display: block; 
             width: 100%; 
@@ -104,14 +104,14 @@
             color: var(--text-color); 
             cursor: pointer; 
         }
-        
+
         .search-button {
             position: absolute;
             right: 15px;
             color: var(--text-color);
             cursor: pointer;
         }
-        
+
         .footer-container {
             position: fixed;
             bottom: 0;
@@ -122,7 +122,7 @@
             align-items: center;
             padding-bottom: 20px;
         }
-        
+
         .footer-button {
             padding: 8px 16px;
             background: rgba(255, 255, 255, 0.2);
@@ -132,28 +132,28 @@
             font-size: 14px;
             text-decoration: none;
         }
-        
+
         .image-source {
             color: var(--text-color);
             font-size: 12px;
             text-decoration: none;
             margin-top: 10px;
         }
-        
+
         @media (max-width: 768px) {
             .search-container { 
                 width: 90%; 
             }
-            
+
             .search-box { 
                 padding: 12px 40px; 
                 font-size: 14px; 
             }
-            
+
             .engine-selector { 
                 font-size: 14px; 
             }
-            
+
             .footer-button { 
                 padding: 6px 12px; 
                 font-size: 12px; 
@@ -177,10 +177,10 @@
             <i class="fa-solid fa-magnifying-glass search-button" id="searchButton"></i>
         </form>
     </div>
-    
+
     <div class="footer-container">
         <a href="https://icp.gov.moe/?keyword=20253666" target="_blank" class="footer-button">萌ICP备20253666号</a>
-        <a href="https://t.alcy.cc" class="image-source" target="_blank">背景图:栗次元API</a>
+        <a href="https://t.alcy.cc" class="image-source" target="_blank">背景图:源初云API</a>
     </div>
 
     <script>
@@ -189,14 +189,14 @@
         const engineDropdown = document.getElementById('engineDropdown');
         const searchBox = document.getElementById('searchBox');
         const searchForm = document.getElementById('searchForm');
-        
+
         engineSelector.addEventListener('click', (e) => {
             e.stopPropagation();
             engineDropdown.style.display = engineDropdown.style.display === 'block' ? 'none' : 'block';
         });
-        
+
         document.addEventListener('click', () => engineDropdown.style.display = 'none');
-        
+
         function handleSearch() {
             if (!searchBox.value.trim()) {
                 alert('请输入搜索内容');
@@ -205,10 +205,10 @@
                 searchForm.submit();
             }
         }
-        
+
         document.getElementById('searchButton').addEventListener('click', handleSearch);
         searchBox.addEventListener('keypress', (e) => e.key === 'Enter' && handleSearch());
-        
+
         function changeEngine(name, url, paramName) {
             engineName.textContent = name;
             searchForm.action = url;
@@ -216,7 +216,7 @@
             engineDropdown.style.display = 'none';
             localStorage.setItem('selectedEngine', JSON.stringify({ name, url, paramName }));
         }
-        
+
         (() => {
             const engine = JSON.parse(localStorage.getItem('selectedEngine'));
             if (engine) changeEngine(engine.name, engine.url, engine.paramName);
